@@ -51,6 +51,7 @@ int main(){
 				}
 				break;
 			case INSERT:
+				keypad(stdscr, FALSE);
 				if(ch == BACKSPACE){
 					getyx(stdscr, y, x);
 					if(x == 0 && y > 0){
@@ -71,6 +72,7 @@ int main(){
 					}
 				} else if (ch == 27){
 					mode = NORMAL;
+					keypad(stdscr, TRUE);
 				} else {
 					addch(ch);
 				}
